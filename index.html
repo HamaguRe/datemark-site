@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Windows用写真整理アプリ DateMark のプライバシーポリシー。写真の処理とデータの取り扱いについて説明します。">
+  <meta name="theme-color" content="#2b2b2b">
+  <title>プライバシーポリシー | DateMark</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #e8e8e6;
+      --surface: #f6f6f5;
+      --surface-2: #efefed;
+      --border: #d0d0cd;
+      --text: #222;
+      --text-sub: #474747;
+      --text-faint: #616161;
+      --body-text: #333;
+      --band: #2b2b2b;
+      --band-text: #e4e4e4;
+      --band-faint: #a6a6a6;
+      --accent: #333;
+      --link: #2c4a66;
+      --ok: #3d7550;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+      line-height: 1.9;
+      letter-spacing: .02em;
+      overflow-wrap: anywhere;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* ヘッダー */
+    .site-header { background: var(--band); color: var(--band-text); }
+    .site-header .wrap { display: flex; align-items: center; gap: .75rem; padding-top: 1rem; padding-bottom: 1rem; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 600; letter-spacing: .04em; }
+    .brand svg { flex: none; }
+    .brand small { color: var(--band-faint); font-weight: 400; font-size: .8rem; }
+
+    .hero { padding: 3.5rem 0 2rem; }
+    .eyebrow { margin: 0; color: var(--text-faint); font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { margin: .4rem 0 .6rem; font-size: clamp(1.7rem, 4.5vw, 2.25rem); line-height: 1.4; font-weight: 700; }
+    .meta { margin: 0; color: var(--text-sub); font-size: .9rem; }
+    .lead { margin: 1.5rem 0 0; color: var(--text-sub); }
+
+    /* 要点 */
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+      gap: .75rem;
+      margin: 0 0 2.5rem;
+      padding: 0;
+      list-style: none;
+    }
+    .summary li {
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+      padding: 1rem 1.1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: .92rem;
+      line-height: 1.7;
+    }
+    .summary svg { flex: none; margin-top: .2rem; color: var(--ok); }
+    .summary strong { display: block; color: var(--text); font-weight: 600; }
+    .summary span { color: var(--text-sub); font-size: .85rem; }
+
+    /* 目次 */
+    .toc {
+      margin: 0 0 2.5rem;
+      padding: 1.1rem 1.3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .toc h2 { margin: 0 0 .4rem; font-size: .8rem; color: var(--text-faint); letter-spacing: .12em; font-weight: 600; }
+    .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; columns: 2 15rem; column-gap: 2rem; }
+    .toc li { counter-increment: toc; break-inside: avoid; font-size: .92rem; }
+    .toc li::before { content: counter(toc, decimal-leading-zero); margin-right: .6rem; color: var(--text-faint); font-variant-numeric: tabular-nums; font-size: .8rem; }
+    .toc a { color: var(--text-sub); text-decoration: none; }
+    .toc a:hover { color: var(--text); text-decoration: underline; }
+
+    /* 本文 */
+    main { counter-reset: sec; }
+    section {
+      counter-increment: sec;
+      padding: 1.6rem 0;
+      border-top: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    section h2 {
+      display: flex;
+      align-items: baseline;
+      gap: .8rem;
+      margin: 0 0 .6rem;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    section h2::before {
+      content: counter(sec, decimal-leading-zero);
+      color: var(--text-faint);
+      font-size: .85rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+    }
+    p { margin: .7rem 0; }
+    section p { color: var(--body-text); }
+
+    .note {
+      margin: 1rem 0 .4rem;
+      padding: .9rem 1.1rem;
+      background: var(--surface-2);
+      border-left: 3px solid #8a8a8a;
+      border-radius: 0 8px 8px 0;
+      color: var(--text-sub);
+      font-size: .93rem;
+    }
+
+    dl.contact { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1.5rem; margin: .8rem 0 0; }
+    dl.contact dt { color: var(--text-faint); font-size: .9rem; }
+    dl.contact dd { margin: 0; }
+
+    a { color: var(--link); text-underline-offset: .22em; text-decoration-color: #9aa8b5; }
+    a:hover { text-decoration-color: currentColor; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+    /* フッター */
+    .site-footer { margin-top: 2rem; background: var(--band); }
+    .site-footer .wrap { padding-top: 1.5rem; padding-bottom: 2rem; color: var(--band-faint); font-size: .85rem; }
+
+    @media (max-width: 480px) {
+      .hero { padding-top: 2.5rem; }
+      dl.contact { grid-template-columns: 1fr; gap: 0; }
+      dl.contact dd { margin-bottom: .5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+          <circle cx="12" cy="12" r="3.5"/>
+          <path d="M8 5l1.2-2h5.6L16 5"/>
+        </svg>
+        DateMark <small>for Windows</small>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>プライバシーポリシー</h1>
+      <p class="meta">最終更新日：<time datetime="2026-10-20">2026年10月20日</time></p>
+      <p class="lead">本ポリシーは、Windows用写真整理アプリ「DateMark」におけるデータの取り扱いについて説明するものです。</p>
+    </div>
+
+    <ul class="summary" aria-label="要点">
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        <div><strong>写真はPC内で処理</strong><span>外部のサーバーへ送信する機能はありません</span></div>
+      </li>
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        <div><strong>アカウント登録なし</strong><span>広告・利用状況の解析も行いません</span></div>
+      </li>
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        <div><strong>第三者へ提供しません</strong><span>個人情報を収集・販売しません</span></div>
+      </li>
+    </ul>
+
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">目次</h2>
+      <ol>
+        <li><a href="#use">写真とファイル情報の利用</a></li>
+        <li><a href="#storage">保存と利用者による管理</a></li>
+        <li><a href="#collection">情報の収集と第三者への提供</a></li>
+        <li><a href="#microsoft">Microsoftのサービス</a></li>
+        <li><a href="#website">このウェブページについて</a></li>
+        <li><a href="#changes">ポリシーの変更</a></li>
+        <li><a href="#contact">開発者・お問い合わせ</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="use">
+        <h2>写真とファイル情報の利用</h2>
+        <p>DateMarkは、利用者が指定したフォルダ内のJPEG写真、ファイル名・パス、撮影日時などのメタデータ（Exif等）を、プレビュー表示、ファイル名の変更、日付の印字のためにPC内で処理します。これらの情報を開発者のサーバーや外部サービスへ送信する機能はありません。</p>
+      </section>
+
+      <section id="storage">
+        <h2>保存と利用者による管理</h2>
+        <p>ファイル名の変更は元のフォルダ内で名前だけを変更するもので、写真ファイルの中身（画像やExif等のメタデータ）は変更しません。ファイル名を元に戻すための履歴はメモリ上にのみ保持し、アプリ終了時に消去します。</p>
+        <p>日付の印字は元の写真への上書き保存となり、印字後は元に戻せません。元の画像ファイルを残したい場合は、別フォルダにバックアップを残してください。</p>
+        <p>処理するフォルダや写真、日付印字の有無は利用者が選択できます。写真は、エクスプローラーなどで確認・削除できます。アプリをアンインストールしても、処理した写真は削除されません。</p>
+        <p class="note">写真に含まれる位置情報などのメタデータを削除する機能はありません。処理後の写真にも情報が残るため、写真を共有する際は必要に応じて別のツールで確認・削除してください。</p>
+      </section>
+
+      <section id="collection">
+        <h2>情報の収集と第三者への提供</h2>
+        <p>DateMark独自の機能として、アカウント登録、広告、利用状況の解析、エラー情報の自動送信は行いません。開発者は、アプリを通じて利用者の写真や個人情報を収集せず、第三者へ提供・販売しません。</p>
+      </section>
+
+      <section id="microsoft">
+        <h2>Microsoftのサービス</h2>
+        <p>画面表示に使用するWebView2 Runtimeは、キャッシュなどの動作データをPC内に保存する場合があります。Windows、Microsoft Store、WebView2 Runtimeによる情報の取り扱いには、<a href="https://privacy.microsoft.com/ja-jp/privacystatement">Microsoftのプライバシーステートメント</a>が適用されます。</p>
+      </section>
+
+      <section id="website">
+        <h2>このウェブページについて</h2>
+        <p>このページにはアクセス解析や広告を設置せず、独自のCookieも使用していません。GitHub Pagesでの配信に伴い、ホスティング提供者のGitHubがIPアドレス等のアクセス情報を取り扱う場合があります。詳しくは<a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーに関する声明</a>をご覧ください。</p>
+      </section>
+
+      <section id="changes">
+        <h2>ポリシーの変更</h2>
+        <p>機能やデータの取り扱いに変更があった場合は、本ページと最終更新日を更新します。</p>
+      </section>
+
+      <section id="contact">
+        <h2>開発者・お問い合わせ</h2>
+        <dl class="contact">
+          <dt>開発者</dt>
+          <dd>HamaguRe Works</dd>
+          <dt>お問い合わせ先</dt>
+          <!-- 公開前に、確定した問い合わせ先へ差し替える。 -->
+          <dd>準備中</dd>
+        </dl>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© HamaguRe Works</span>
+    </div>
+  </footer>
+</body>
+</html>
